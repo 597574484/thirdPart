@@ -5,19 +5,21 @@
     <title>task_3_44</title>
     <link rel = "stylesheet" href = "css/popUpper.css"/>
     <link rel = "stylesheet" href = "css/task_3_44.css"/>
+    <link rel = "stylesheet" href = "css/loading.css">
 </head>
 <body>
 <div class = "wrap"></div>
 <script src = "js/popUpper.js"></script>
+<script src = "js/loading.js"></script>
 <script src = "js/task_3_44.js"></script>
 <script>
     window.onload = function (event){
-        var x = new WaterFall("wrap",2,5);//wrap:div的class名, 初始5列 , 20 :  间距20px
+        var x = new WaterFall("wrap",4,20);//wrap:div的class名, 初始5列 , 20 :  间距20px
         var arr = [];
         for(let i = 0; i < 20; i++){
             arr.push(`image/${ Math.floor(Math.random()*10)%10 + 1 }.jpg`);
         }
-        x.append(...arr);
+        x.append(arr);
     }
 </script>
 </body>

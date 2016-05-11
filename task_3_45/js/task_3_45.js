@@ -21,7 +21,7 @@
             if(win.Loading){
                 function create(){
                     var arr = [];
-                    for(let i = 0; i < 10; i++){
+                    for(var i = 0; i < 10; i++){
                         arr.push( "image/"+ (Math.floor((Math.random()*10))%10+1) +".jpg");
                     }
                     this.append(...arr);
@@ -71,8 +71,8 @@
             }
             this.imgItems = [];
             rows.map(function(row,index){
-                let rowDiv = doc.createElement("div");
-                let wid = width;
+                var rowDiv = doc.createElement("div");
+                var wid = width;
                 rowDiv.classList.add("row");
                 rowDiv.style.height = parseInt(wid/row.rowRatio) + "px";
                 row.row.map(function(element,index){
