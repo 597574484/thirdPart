@@ -1,0 +1,50 @@
+*{
+    padding : 0;
+    margin : 0;
+}
+body{
+    background-color: #dddddd;
+    margin : 0 auto;
+    text-align : center;
+}
+.wrap{
+    white-space: nowrap;
+    overflow: hidden;
+    position : relative;
+
+}
+.inner{
+    display: inline-block;
+    margin:0 auto;
+}
+.column{
+    float : left;
+    white-space: nowrap;
+}
+.imgWrap{
+
+    margin : 40px 0  ;
+    background-color : #ffffff;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+    overflow : hidden;
+    box-shadow : 3px 3px 20px 1px #555555;
+}
+.imgItem{
+    background-position : center;
+    background-size : cover;
+    background-repeat: no-repeat;
+
+}
+.imgItem:hover{
+    opacity: .9;
+    cursor: cell;
+    box-shadow: inset 3px 3px 20px 1px #000000;
+}
+.description{
+    text-align : right;
+    color: #888888;
+    font-weight: 800;
+    font-family: 'Microsoft Yahei';
+}
