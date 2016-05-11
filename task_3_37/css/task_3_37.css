@@ -1,0 +1,64 @@
+.pop-wrap{
+    position : fixed;
+    left : 0;
+    top : 0;
+    width : 100%;
+    height : 100%;
+}
+.pop-wrap .pop-fade{
+    width : 100%;
+    height : 100%;
+    background-color : #000000;
+    opacity : .7;
+    position : absolute;
+    z-index : 9999;
+}
+.pop-wrap .pop-model{
+    width : 40%;
+    height : 35%;
+    min-height : 100px;
+    min-width : 200px;
+    position : absolute;
+    margin : auto;
+    top : 0; bottom : 0; left : 0; right : 0;
+    z-index : 10000;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border : 1px solid rgba(0,0,0,0.4);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.6);
+    transition : margin-top 3.3s, opacity 3.3s;
+}
+
+.pop-wrap .pop-on .pop-model{
+    margin-top : 20px;
+    opacity : 0;
+}
+.pop-wrap .pop-model .pop-header{
+    height : 20%;
+    border-bottom: 2px solid #aeaeae;
+    padding : 10px 0 0 ;
+    cursor :  move;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.pop-wrap .pop-model .pop-body{
+    height : 60%;
+    border-bottom: 2px solid #aeaeae;
+    display :  flex;
+    align-items : center;
+    justify-content : center;
+    color : #ffffff;
+
+}
+.pop-wrap .pop-model .pop-footer{
+    height : 20%;
+    position :  relative;
+}
+.pop-footer button {
+    box-sizing : border-box;
+    height : 50%;
+}
