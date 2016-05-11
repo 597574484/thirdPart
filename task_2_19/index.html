@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task_2_19</title>
+    <link rel="stylesheet" href = "css/task_2_19.css"/>
+</head>
+<body>
+<form onsubmit="return false">
+    <input id = "in"class = "form-control" type = "text" />
+    <button id = "LI" onclick = "operate(event)">左侧入</button>
+    <button id = "RI" onclick = "operate(event)">右侧入</button>
+    <button id = "LO" onclick = "operate(event)">左侧出</button>
+    <button id = "RO" onclick = "operate(event)">右侧出</button>
+</form>
+<div class = "btn-grounp">
+    <button onclick = "sortArr(event)">排序</button>
+    <button onclick = "randomArr()">随机50个</button>
+</div>
+<div class = "queue"></div>
+<script src ="js/task_2_19.js"></script>
+</body>
+</html>
