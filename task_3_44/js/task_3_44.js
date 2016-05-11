@@ -6,113 +6,66 @@
         this.padding = padding || 20;
         this.columns = null;
         this.imgItems = [];
-        this.spinner = null;
         this.innerDiv = null;
+        this.firstTimeInit = true;
         this.init();
     }
     WaterFall.prototype = {
         init : function(){
             var that = this,width,wrapWidth,html = "",mySpinner;
-            this.wrap.classList.add("wrap");
-            this.innerDiv= doc.createElement("div");
-            this.innerDiv.classList.add("inner");
-            this.wrap.appendChild(this.innerDiv);
-            //if(!this.spinner) {
-                //mySpinner = doc.createElement("div");
-                //mySpinner.classList.add("spinner");
-                //mySpinner.innerHTML = '<div class = "point point-left"></div><div class = "point point-middle"></div><div class = "point point-right"></div>';
-                //this.spinner = mySpinner;
-                //mySpinner = null;
-                //doc.body.appendChild(this.spinner);
-                //this.wrap.addEventListener("click",function(event){
-                //    event.stopPropagation();
-                //    var target = event.target;
-                //    var url = target.dataset.src;
-                //    if(!url)
-                //        return ;
-                //    else{
-                //        var pop = new win.PopUpper(url);
-                //        pop.show();
-                //    }
-                //});
-                //win.onresize = (function(){
-                //    var oldCol = that.columnsCount;
-                //    return function(event){
-                //        var width = parseInt(win.getComputedStyle(that.wrap,null)['width']),col = -1;
-                //        if(width < 510)
-                //            col = 1;
-                //        else if(width < 750)
-                //            col = 2;
-                //        else if(width < 1050)
-                //            col = 3;
-                //        else if(width < 1400)
-                //            col = 4;
-                //        else
-                //            col = 5;
-                //        if(col === oldCol){
-                //            return;
-                //        }
-                //        else{
-                //            oldCol = col;
-                //            that.columnsCount = col;
-                //            that.init();
-                //            that.imgItems.map(function(currValue){
-                //                this.getMinColumn().appendChild(currValue);
-                //            },that);
-                //        }
-                //
-                //    }
-                //})();
-            //    win.addEventListener("scroll",(function(){
-            //        var loading  = false;
-            //        var spinner = doc.querySelector(".spinner");
-            //
-            //        return function(event){
-            //            if(loading)
-            //                return ;
-            //            var height = document.documentElement.scrollTop || document.body.scrollTop;
-            //            if(height + win.innerHeight >= doc.body.clientHeight - 20 ){
-            //                loading  = true;
-            //                spinner.style.display = "block";
-            //                var pro = new Promise(function(resolve,reject){
-            //                    var arr = [];
-            //                    for(let i = 0; i < 20; i++){
-            //                        arr.push(`image/${(Math.floor((Math.random()*10))%6 + 1)}.jpg`);
-            //                    }
-            //                    setTimeout(function(){that.append(...arr);resolve();},2000);
-            //
-            //
-            //                });
-            //                pro.then(function(){
-            //                    spinner.style.display = "none";
-            //                    loading  = false;
-            //                },function(){
-            //                    console.log("error");
-            //                    spinner.style.display = "none";
-            //                    loading  = false;
-            //                });
-            //            }
-            //        }
-            //    })());
-            //}
-            if(win.PopUpper) {
-                this.wrap.addEventListener("click",function(event){
-                    event.stopPropagation();
-                    if (event.target.nodeName.toLowerCase() === "div") {
-                        var pop = new PopUpper(event.target.dataset['src']);
-                        pop.show();
+            if(this.firstTimeInit){
+                this.wrap.classList.add("wrap");
+                this.innerDiv= doc.createElement("div");
+                this.innerDiv.classList.add("inner");
+                this.wrap.appendChild(this.innerDiv);
+                win.onresize = (function(){
+                    var oldCol = that.columnsCount;
+                    return function(event){
+                        var width = parseInt(win.getComputedStyle(that.wrap,null)['width']),col = -1;
+                        if(width < 510)
+                            col = 1;
+                        else if(width < 750)
+                            col = 2;
+                        else if(width < 1050)
+                            col = 3;
+                        else if(width < 1400)
+                            col = 4;
+                        else
+                            col = 5;
+                        if(col === oldCol){
+                            return;
+                        }
+                        else{
+                            oldCol = col;
+                            that.columnsCount = col;
+                            that.init();
+                            that.imgItems.map(function(currValue){
+                                this.getMinColumn().appendChild(currValue);
+                            },that);
+                        }
+
                     }
-                });
-            }
-            if(win.Loading){
-                var create = function (){
-                    var arr = [];
-                    for(var i = 0; i < 10; i++){
-                        arr.push( "image/"+ (Math.floor((Math.random()*10))%6+1) +".jpg");
-                    }
-                    this.append(arr);
+                })();
+                if(win.PopUpper) {
+                    this.wrap.addEventListener("click",function(event){
+                        event.stopPropagation();
+                        if (event.target.dataset.src) {
+                            var pop = new PopUpper(event.target.dataset['src']);
+                            pop.show();
+                        }
+                    });
                 }
-                var x = new Loading("s",create.bind(this));
+                if(win.Loading){
+                    var create = function (){
+                        var arr = [];
+                        for(var i = 0; i < 10; i++){
+                            arr.push( "image/"+ (Math.floor((Math.random()*10))%6+1) +".jpg");
+                        }
+                        this.append(arr);
+                    }
+                    var x = new Loading("s",create.bind(this));
+                }
+                this.firstTimeInit = false;
             }
             wrapWidth = parseInt(win.getComputedStyle(this.wrap,null)['width'])||win.innerWidth;
             width = (wrapWidth - (this.columnsCount - 1) * this.padding) / (this.columnsCount + 1) ;
