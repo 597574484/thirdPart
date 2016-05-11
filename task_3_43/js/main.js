@@ -1,6 +1,6 @@
 ;(function(win,doc,undefined){
 	"use strict";
-    function ImageFrame(element,width,height){//
+    function Tangram (element,width,height){//
         this.container = element;
         this.wrap = null;
         this.imgList = [];
@@ -8,7 +8,7 @@
         this.height = height;
     }
 
-    ImageFrame.prototype = {
+    Tangram.prototype = {
         init : function(){
             this.container = doc.querySelector("." + this.container) || doc.body;
             this.wrap = doc.createElement("div");
@@ -174,5 +174,5 @@
         }
     }
 
-    window.ImageFrame = ImageFrame;
+    window.Tangram = Tangram;
 })(window,document);

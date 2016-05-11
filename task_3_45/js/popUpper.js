@@ -1,3 +1,7 @@
+/**
+ * function PopUpper 弹出窗口组件。
+ * @url 表示弹出窗口所 显示的图片的url
+ */
 ;(function(win,doc,undefined){
 	"use strict";
     function PopUpper(url){

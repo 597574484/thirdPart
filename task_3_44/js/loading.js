@@ -1,7 +1,7 @@
 /**
  * function Loading 加载组件。
  * @wrap 组建放置的位置，默认在body中。
- *@scrollFn 当scroll滑到底部的时候触动的函数。
+ * @scrollFn 当scroll滑到底部的时候触动的函数。
  */
 ;(function(win,doc,undefined){
     "use strict";
@@ -26,11 +26,11 @@
                         return;
                     var scrollTop = doc.documentElement.scrollTop  || doc.body.scrollTop;
                     if(scrollTop + win.innerHeight > doc.body.clientHeight-20){
-
                         that.toggle();
                         that.scrollFn();
                         setTimeout(that.toggle.bind(that),1000);
                     }
+
                 });
             }
         },
