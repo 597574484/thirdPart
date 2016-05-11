@@ -1,4 +1,5 @@
 ;(function(win,doc,undefined){
+    "use strict";
     function Cask(wrapClassName){
         this.wrap = doc.querySelector("." + wrapClassName);
         this.imgItems = [];
@@ -8,7 +9,6 @@
         init : function(){
             this.wrap = this.wrap || doc.createElement("div");
             this.wrap.classList.add("container");
-			
             if(win.PopUpper) {
                 this.wrap.addEventListener("click",function(event){
                     event.stopPropagation();
@@ -19,17 +19,17 @@
                 });
             }
             if(win.Loading){
-                function create(){
+                var create = function (){
                     var arr = [];
                     for(var i = 0; i < 10; i++){
                         arr.push( "image/"+ (Math.floor((Math.random()*10))%10+1) +".jpg");
                     }
-                    this.append(...arr);
+                    this.append(arr);
                 }
                 var x = new Loading("s",create.bind(this));
             }
         },
-        createElements : function (...src){
+        createElements : function (src){
             var imgWrap,img;
             var imgArr = src.map(function(value,index){
                 imgWrap = doc.createElement("div");
@@ -37,30 +37,28 @@
                 img = doc.createElement("img");
                 img.src = value;
                 imgWrap.appendChild(img);
-				console.log(img.height);	
                 return {element : imgWrap,ratio : (img.naturalWidth||img.width)/(img.naturalHeight||img.height) || 1};
-                //return imgWrap;
             },this);
             return imgArr;
 			
         },
-        append : function (...src){
-            var imgArr = this.createElements(...src);
-            this.imgItems.push(...imgArr);
+        append : function (src){
+            var imgArr = this.createElements(src);
+            Array.prototype.push.apply(this.imgItems,imgArr);
             this.insertIntoDoc();
         },
         insertIntoDoc : function(){
             var len = this.imgItems.length,
                 minHeight = 200,
-                width = this.wrap.clientWidth;
-                minRatio = width / minHeight
+                width = this.wrap.clientWidth,
+                minRatio = width / minHeight,
                 currRatio = 0,
                 items = this.imgItems.slice(0),
                 rows = [],
                 row = [];
             var docFrame = doc.createDocumentFragment();
 
-            for(let i = 0,len = items.length; i < len; i++){
+            for(var i = 0,len = items.length; i < len; i++){
                 currRatio += items[i].ratio;
                 row.push(items[i].element);
                 if(currRatio >= minRatio){
@@ -76,8 +74,8 @@
                 rowDiv.classList.add("row");
                 rowDiv.style.height = parseInt(wid/row.rowRatio) + "px";
                 row.row.map(function(element,index){
-                    rowDiv.appendChild(element);
-                },this);
+                    this.appendChild(element);
+                },rowDiv);
                 docFrame.appendChild(rowDiv);
             },this);
             this.wrap.appendChild(docFrame);
