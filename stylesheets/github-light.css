@@ -121,4 +121,29 @@ SOFTWARE.
 .pl-mo /* meta.output */ {
   color: #1d3e81;
 }
+.task-list{
 
+}
+.task-list div{
+  padding-bottom : 20px;
+}
+.task-list a{
+  display: inline-block
+  text-decoration : none;
+  box-sizing: border-box;
+  color : #000000;
+  font-weight : bolder;
+  font-size : 20px;
+  text-align : center;
+  min-width : 200px;
+  min-height : 50px;
+  transition : all .3s ease-in-out;
+}
+.task-list a:link, .task-list:visited{
+
+}
+.task-list a:hover, .task-list:active{
+    background-color : #ff0000;
+    color : #ffffff;
+    box-shadow: 4px 4px 4px #aaaaaa;
+}
