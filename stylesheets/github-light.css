@@ -122,18 +122,19 @@ SOFTWARE.
   color: #1d3e81;
 }
 .task-list{
-
+    text-align : center;
 }
 .task-list div{
   padding-bottom : 20px;
 }
 .task-list a{
-  display: inline-block
+  display: inline-block;
   text-decoration : none;
   box-sizing: border-box;
-  color : #000000;
+  color : #156A86;
   font-weight : bolder;
   font-size : 20px;
+  line-height : 50px;
   text-align : center;
   min-width : 200px;
   min-height : 50px;
