@@ -1,0 +1,249 @@
+body{
+    background-color: lightgray;
+}
+*{
+    margin : 0;
+    padding : 0;
+}
+section {
+	width : 100%;
+    background-color: lightgray;
+    margin : 15px auto 0;
+	width : 888px;
+	font-size : 12px;
+}
+div[class^="part-"]{
+    width : 100%;
+    margin : 0 auto;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+div[class^="part-"]:last-child{
+    margin-bottom: 0;
+}
+.part-1{
+    height : 70px;
+	position: relative;
+    background-color: white;
+    padding-top : 24px;
+	color : grey;
+}
+div[class *= "item-"]{
+    display : inline-block;
+    height : 100%;
+    text-align : center;
+}
+.item-1{
+    position : relative;
+    height : 100%;
+    bottom : 34px;
+    width : 147px;
+	left : 10px;
+}
+.item-2{
+    width : 157px;
+    position : relative;
+    bottom : 5px;
+	left : 30px;
+}
+.item-2 div:first-child,.item-4 .first-row{
+    margin-bottom : 5px;
+}
+.item-3{
+	position : relative;
+    width : 27px;
+    height : 100%;
+	left : 30px;
+}
+.item-3 img{
+    position: relative;
+    top : 10px;
+}
+.item-3 span{
+    position: relative;
+    top : -18px;
+    left : 5px;
+}
+.item-4{
+    width : 300px;
+    position: relative;
+    top : -4px;
+	left : 50px;
+}
+.item-4 div[class $="row"] div{
+    display : inline-block;
+	
+}
+.second-row{
+    position : relative;
+    right : 0px;
+}
+.item-1 select,.first-row select,.second-row div:first-child select{
+    width : 70px;
+    height : 25px;
+}
+.item-2 select,.first-row input, .second-row div:last-child select{
+    width : 122px;
+    height : 25px;
+}
+.part-1 select,.part-1 input{
+    color : black;
+}
+.part-1 input{
+    appearance: text;
+    height : 23px;
+}
+.part-1 button{
+    width : 60px;
+    height : 30px;
+    position : relative;
+    bottom : 14px;
+    left : 70px;
+    background-color : blue;
+    color : white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-style: none;
+}
+.part-2{
+    position : relative;
+    height : 65px;
+}
+div[class ^= "time"],div.prev,div.next,.btn{
+    height : 100%;
+	display: inline-block;
+    margin-right :0px;
+    background-color: white;
+	float : left;
+	margin : 0 2px;
+}	
+
+div[class ^= "time"]{
+    width : 110px;
+    position : relative;
+}
+div[class ^= "time"] img{
+    float : left;
+    position: absolute;;
+    top : 31px;
+    left  : 14px;
+}
+div[class ^= "time"]  div:nth-child(2){
+    position: absolute;
+    margin : 0 auto;
+    top : 17px;
+    left : 30px;
+}
+div[class ^= "time"]  div:nth-child(3){
+    position: absolute;
+    top : 35px;
+    left : 32px;
+    font-size : 21px;
+	color : darkorange;
+	font-weight :bolder;
+}
+div[class ^= "time"]:hover,.prev:hover,.next:hover,.btn:hover{
+    border-top: 4px solid blue;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.prev,.next{
+    width : 25px;
+}
+.prev a,.next a{
+    display: block;
+    padding : 0;
+    margin : 0;
+    position: absolute;
+}
+.prev img, .next img{
+    position: absolute;
+    top : 16px;
+}
+.btn{
+	position: relative;
+    display: inline-block;
+	width : 148px;
+    background-color: white;
+	margin-right : -20px;
+}
+.btn a{
+    text-decoration: none;
+    color : black;
+    position: absolute;
+    left : 70px;
+    top : 25px;
+}
+.btn img{
+    position: absolute;
+    top : 15px;
+    left : 20px;
+}
+.part-3{
+    height : 90px;
+    width : 888px;
+}
+.statistics{
+    display : inline-block;
+    position: relative;
+    top : 4px;
+    background-color : white;
+    width : 200px;
+    margin-right : 20px;
+    height : 100%;
+    height : 70px;
+}
+.statistics:last-child{
+    margin-right : -20px;
+
+}
+.statistics div{
+    margin-top: 14px;
+    margin-left : 10px;
+}
+
+.statistics div:nth-child(2){
+	font-size : 10px;
+	color : gray;
+}
+.square{
+    height :45px;
+    width : 64px;
+    position: absolute;
+    bottom : 10px;
+    left : 110px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    opacity : 0.6;
+}
+.square1{
+    border-left : 3px solid green;
+}
+.square1 div:last-child{
+    background-color: lightgreen;
+}
+.square2{
+    border-left : 3px solid blue;
+}
+.square2 div:last-child{
+    background-color: lightblue;
+}
+.square3{
+    border-left : 3px solid red;
+}
+.square3 div:last-child{
+    background-color: red;
+}
+.square4{
+    border-left : 3px solid lightgreen;
+}
+.square4 div:last-child{
+    background-color: lightgreen;
+}

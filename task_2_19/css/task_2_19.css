@@ -1,0 +1,17 @@
+.queue{
+    margin : 10px 0;
+}
+.node{
+    width  : 10px;
+    display : inline-block;
+    background-color : red;
+    text-align : center;
+    line-height : 25px;
+    font-size :25px;
+    margin-right: 5px;
+}
+button{
+    border: none;
+    background-color : #d8bfd8;
+    color : #ffffff;
+}

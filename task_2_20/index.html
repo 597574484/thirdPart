@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task_2_20</title>
+    <link rel="stylesheet" href = "css/task_2_20.css"/>
+</head>
+<body>
+<form onsubmit="return false">
+    <div class = "container">
+        <div class = "form-control">请输入: <br/>
+            <textarea id = "in"class = "form-control"
+                      rows = "3">d sd d1 w2,2,c、q、122,3，4</textarea>
+        </div>
+        <div class = "form-control">搜索: <input id  = "search"type = "text"/><button onclick = "searching()">查询</button>
+        </div>
+        <div class = "btn-grounp">
+            <button id = "LI" onclick = "operate(event)">左侧入</button>
+            <button id = "RI" onclick = "operate(event)">右侧入</button>
+            <button id = "LO" onclick = "operate(event)">左侧出</button>
+            <button id = "RO" onclick = "operate(event)">右侧出</button>
+        </div>
+    </div>
+</form>
+<div class = "queue"></div>
+<script src = "js/task_2_20.js"></script>
+</body>
+</html>

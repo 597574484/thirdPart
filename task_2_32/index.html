@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task_2_32</title>
+    <link rel="stylesheet" href = "css/task_2_32.css" />
+</head>
+<body>
+<div class = "container"></div>
+<form name = "controlForm"  onsubmit="return false;">
+    <div class = "controler">
+        <input  class = "form-control" name = "label" type = "text" placeholder  = "请输入前方Label的内容,默认是名字" autofocus = "autofocus" reauired/>
+        <div    class = "selectDiv">
+            <select class = "parentSelect" name = "type"></select>
+            <select class = "childSelect"  name = "childType"></select>
+        </div>
+        <input  class = "form-control defaultMsg" name = "rules" type = "text" placeholder = "请输入默认提示信息"   reauired/>
+        <input  class = "form-control succeedMsg" name = "succeed" type = "text" placeholder = "请输入正确的提示信息" reauired/>
+        <input  class = "form-control failMsg"    name = "fail"    type = "text" placeholder = "请输入失败的提示信息" reauired/>
+        <button class = "btnAdd">添加</button>
+    </div>
+</form>
+<div class = "styleChange">
+    <label>请选择样式:</label>
+    <input class = "styleRadio" value = "0" name = "style" type = "radio" checked = "checked">样式1
+    <input class = "styleRadio" value = "1" name = "style" type = "radio">样式2
+</div>
+<script src = "js/task_2_32.js"></script>
+</body>
+</html>

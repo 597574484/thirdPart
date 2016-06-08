@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task_3_45</title>
+    <link rel = "stylesheet" href = "css/main.css" />
+    <link rel = "stylesheet" href = "css/popUpper.css"/>
+    <link rel = "stylesheet" href = "css/loading.css"/>
+</head>
+<body>
+<div class = "container"></div>
+<script src = "js/popUpper.js"></script>
+<script src = "js/loading.js"></script>
+<script src = "js/main.js"></script>
+<script >
+    var cask = new Cask("container");
+    var arr = [];
+    for(let i = 0; i < 30; i++){
+        arr.push( "image/"+ (Math.floor((Math.random()*10))%10+1) +".jpg");
+    }
+    cask.append(arr);
+</script>
+</body>
+</html>
